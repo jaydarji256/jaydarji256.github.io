@@ -51,12 +51,14 @@ function App() {
     <div className="noise" />
     <header className="nav-wrap">
       <a className="brand" href="#home" aria-label="Jay Darji home"><span>J</span>D.</a>
-      <button className="theme-toggle" onClick={() => setIsLight(!isLight)} aria-label={`Switch to ${isLight ? 'dark' : 'light'} mode`} aria-pressed={isLight}>
-        <span aria-hidden="true">{isLight ? '☾' : '☼'}</span> {isLight ? 'Dark' : 'Light'}
-      </button>
-      <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? '×' : '☰'}</button>
       <nav className={menuOpen ? 'open' : ''}>{nav.map(item => <a key={item} onClick={() => setMenuOpen(false)} className={active === item.toLowerCase() ? 'active' : ''} href={`#${item.toLowerCase()}`}>{item}</a>)}</nav>
-      <a className="nav-cta" href="/resume-jay-darji.pdf" download>Resume <Arrow /></a>
+      <div className="header-actions">
+        <button className="theme-toggle" onClick={() => setIsLight(!isLight)} aria-label={`Switch to ${isLight ? 'dark' : 'light'} mode`} aria-pressed={isLight}>
+          <span aria-hidden="true">{isLight ? '☾' : '☼'}</span>
+        </button>
+        <a className="nav-cta" href="/resume-jay-darji.pdf" download>Resume <Arrow /></a>
+      </div>
+      <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? '×' : '☰'}</button>
     </header>
 
     <main>
