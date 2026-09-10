@@ -64,6 +64,22 @@ function App() {
     <main>
       <section id="home" className="hero section-shell">
         <div className="orb orb-one" /><div className="orb orb-two" />
+        <div className="data-network" aria-hidden="true">
+          <span className="network-label">DATA SIGNAL / 01</span>
+          <svg viewBox="0 0 520 410" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path className="network-line line-one" d="M28 291L135 195L220 251L332 109L474 171" />
+            <path className="network-line line-two" d="M82 95L135 195L264 69L332 109L412 44" />
+            <path className="network-line line-three" d="M220 251L309 335L474 171L495 303" />
+            <circle className="network-node node-one" cx="28" cy="291" r="6" />
+            <circle className="network-node node-two" cx="135" cy="195" r="9" />
+            <circle className="network-node node-three" cx="220" cy="251" r="6" />
+            <circle className="network-node node-four" cx="332" cy="109" r="10" />
+            <circle className="network-node node-five" cx="474" cy="171" r="7" />
+            <circle className="network-node node-six" cx="309" cy="335" r="5" />
+            <circle className="network-node node-seven" cx="264" cy="69" r="5" />
+            <circle className="network-node node-eight" cx="412" cy="44" r="5" />
+          </svg>
+        </div>
         <div className="hero-copy reveal">
           <p className="identity">JAY DARJI <span>/ AI ENTHUSIAST</span></p>
           <p className="eyebrow"><span className="live-dot" /> Available for opportunities</p>
