@@ -36,6 +36,11 @@ const projects = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState('home');
+  const [isLight, setIsLight] = useState(() => localStorage.getItem('jay-theme') === 'light');
+  useEffect(() => {
+    document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
+    localStorage.setItem('jay-theme', isLight ? 'light' : 'dark');
+  }, [isLight]);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => entries.forEach(e => e.isIntersecting && setActive(e.target.id)), { rootMargin: '-35% 0px -55% 0px' });
     document.querySelectorAll('section[id]').forEach(el => observer.observe(el));
@@ -46,6 +51,9 @@ function App() {
     <div className="noise" />
     <header className="nav-wrap">
       <a className="brand" href="#home" aria-label="Jay Darji home"><span>J</span>D.</a>
+      <button className="theme-toggle" onClick={() => setIsLight(!isLight)} aria-label={`Switch to ${isLight ? 'dark' : 'light'} mode`} aria-pressed={isLight}>
+        <span aria-hidden="true">{isLight ? '☾' : '☼'}</span> {isLight ? 'Dark' : 'Light'}
+      </button>
       <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? '×' : '☰'}</button>
       <nav className={menuOpen ? 'open' : ''}>{nav.map(item => <a key={item} onClick={() => setMenuOpen(false)} className={active === item.toLowerCase() ? 'active' : ''} href={`#${item.toLowerCase()}`}>{item}</a>)}</nav>
       <a className="nav-cta" href="/resume-jay-darji.pdf" download>Resume <Arrow /></a>
