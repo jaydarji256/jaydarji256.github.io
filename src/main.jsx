@@ -45,7 +45,7 @@ function App() {
   return <>
     <div className="noise" />
     <header className="nav-wrap">
-      <a className="brand" href="#home" aria-label="Jay Darji home"><strong><span>JAY</span> DARJI</strong><small>AI ENTHUSIAST</small></a>
+      <a className="brand" href="#home" aria-label="Jay Darji home"><span>J</span>D.</a>
       <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? '×' : '☰'}</button>
       <nav className={menuOpen ? 'open' : ''}>{nav.map(item => <a key={item} onClick={() => setMenuOpen(false)} className={active === item.toLowerCase() ? 'active' : ''} href={`#${item.toLowerCase()}`}>{item}</a>)}</nav>
       <a className="nav-cta" href="/resume-jay-darji.pdf" download>Resume <Arrow /></a>
