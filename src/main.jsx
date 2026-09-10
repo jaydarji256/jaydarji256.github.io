@@ -87,6 +87,11 @@ function App() {
           <p className="hero-text">I’m <strong>Jay Darji</strong>, a Computer Engineering undergraduate turning data, language, and thoughtful code into practical digital experiences.</p>
           <div className="hero-actions"><a className="button primary" href="#projects">View selected work <Arrow /></a><a className="button text" href="#contact">Let’s connect <span>↓</span></a></div>
         </div>
+        <aside className="hero-focus reveal-delay">
+          <p>01 / CURRENT FOCUS</p>
+          <h3>Machine learning<br/><em>with human context.</em></h3>
+          <div><span>NLP</span><span>RECOMMENDER SYSTEMS</span></div>
+        </aside>
         <aside className="hero-card reveal-delay">
           <div className="card-top"><span>BASED IN</span><span className="status">● INDIA</span></div>
           <div className="location">Ahmedabad<br/><i>23.0225° N</i> · <i>72.5714° E</i></div>
