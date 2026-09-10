@@ -45,7 +45,7 @@ function App() {
   return <>
     <div className="noise" />
     <header className="nav-wrap">
-      <a className="brand" href="#home" aria-label="Jay Darji home"><span>J</span>D.</a>
+      <a className="brand" href="#home" aria-label="Jay Darji home"><strong><span>JAY</span> DARJI</strong><small>AI ENTHUSIAST</small></a>
       <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? '×' : '☰'}</button>
       <nav className={menuOpen ? 'open' : ''}>{nav.map(item => <a key={item} onClick={() => setMenuOpen(false)} className={active === item.toLowerCase() ? 'active' : ''} href={`#${item.toLowerCase()}`}>{item}</a>)}</nav>
       <a className="nav-cta" href="/resume-jay-darji.pdf" download>Resume <Arrow /></a>
@@ -55,6 +55,7 @@ function App() {
       <section id="home" className="hero section-shell">
         <div className="orb orb-one" /><div className="orb orb-two" />
         <div className="hero-copy reveal">
+          <p className="identity">JAY DARJI <span>/ AI ENTHUSIAST</span></p>
           <p className="eyebrow"><span className="live-dot" /> Available for opportunities</p>
           <h1>Building useful <em>intelligence</em> from data.</h1>
           <p className="hero-text">I’m <strong>Jay Darji</strong>, a Computer Engineering undergraduate turning data, language, and thoughtful code into practical digital experiences.</p>
