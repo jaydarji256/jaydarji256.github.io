@@ -87,15 +87,14 @@ function App() {
           <p className="hero-text">I’m <strong>Jay Darji</strong>, a Computer Engineering undergraduate turning data, language, and thoughtful code into practical digital experiences.</p>
           <div className="hero-actions"><a className="button primary" href="#projects">View selected work <Arrow /></a><a className="button text" href="#contact">Let’s connect <span>↓</span></a></div>
         </div>
-        <aside className="hero-focus reveal-delay">
-          <p>01 / CURRENT FOCUS</p>
-          <h3>Machine learning<br/><em>with human context.</em></h3>
-          <div><span>NLP</span><span>RECOMMENDER SYSTEMS</span></div>
-        </aside>
-        <aside className="hero-card reveal-delay">
-          <div className="card-top"><span>BASED IN</span><span className="status">● INDIA</span></div>
-          <div className="location">Ahmedabad<br/><i>23.0225° N</i> · <i>72.5714° E</i></div>
-          <div className="card-bottom"><span>DATA · AI · SOFTWARE</span><b>2026</b></div>
+        <aside className="hero-art reveal-delay" aria-label="Jay Darji's AI and data system map">
+          <div className="art-heading"><span>AHMEDABAD / SYSTEM MAP</span><b>V.01</b></div>
+          <div className="orbit-stage" aria-hidden="true">
+            <i className="orbit-ring ring-one" /><i className="orbit-ring ring-two" /><i className="orbit-ring ring-three" />
+            <div className="orbit-core"><strong>JD</strong><span>DATA / AI</span></div>
+            <span className="orbit-node node-ml">ML</span><span className="orbit-node node-nlp">NLP</span><span className="orbit-node node-data">DATA</span><span className="orbit-node node-build">BUILD</span>
+          </div>
+          <div className="art-projects"><span>01 <b>Movie Recommender</b></span><span>02 <b>SpamShield</b></span><span>03 <b>Expense Tracker</b></span></div>
         </aside>
         <a className="scroll" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
       </section>
