@@ -46,6 +46,13 @@ function App() {
     document.querySelectorAll('section[id]').forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('is-visible');
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.motion-section').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
   const nav = ['About', 'Skills', 'Experience', 'Projects', 'Contact'];
   return <>
     <div className="noise" />
@@ -99,17 +106,17 @@ function App() {
         <a className="scroll" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
       </section>
 
-      <section id="about" className="section-shell about">
+      <section id="about" className="section-shell about motion-section">
         <p className="section-kicker">01 / ABOUT</p>
         <div className="about-grid"><h2>Curious by nature.<br/><em>Precise</em> by practice.</h2><div className="about-copy"><p>I’m a Computer Engineering student at Vishwakarma Government Engineering College with hands-on experience across data analytics, machine learning, NLP, and deployment.</p><p>My approach pairs a researcher’s curiosity with an engineer’s focus on the details that make an idea actually work.</p><div className="mini-facts"><div><b>2023—2027</b><span>B.E. Computer Engineering</span></div><div><b>Ahmedabad, India</b><span>Open to collaboration</span></div></div></div></div>
       </section>
 
-      <section id="skills" className="section-shell skills-section">
+      <section id="skills" className="section-shell skills-section motion-section">
         <p className="section-kicker">02 / TOOLKIT</p><div className="section-heading"><h2>Technical range,<br/><em>intentional</em> focus.</h2><p>Tools I use to move from raw data to clear, usable outcomes.</p></div>
         <div className="skill-grid">{skills.map(([title, ...items], index) => <article className="skill-card" key={title}><span className="skill-num">0{index + 1}</span><h3>{title}</h3><div>{items.map(item => <span className="chip" key={item}>{item}</span>)}</div></article>)}</div>
       </section>
 
-      <section id="experience" className="section-shell experience">
+      <section id="experience" className="section-shell experience motion-section">
         <p className="section-kicker">03 / EXPERIENCE</p><h2>Learning by doing,<br/>and <em>shipping.</em></h2>
         <div className="timeline">
           <article><div className="time">JUL 2026 — AUG 2026</div><div><span className="role-type">VIRTUAL INTERNSHIP</span><h3>Virtual Data Science Explorer Intern</h3><p>YuvaIntern</p></div><p className="role-copy">Completed weekly work spanning data science project planning, exploratory analysis, ML workflows, visualization strategy, model evaluation, and technical documentation.</p></article>
@@ -117,17 +124,17 @@ function App() {
         </div>
       </section>
 
-      <section id="projects" className="section-shell projects">
+      <section id="projects" className="section-shell projects motion-section">
         <p className="section-kicker">04 / SELECTED WORK</p><div className="section-heading"><h2>Projects with a<br/><em>purpose.</em></h2><p>Explorations at the intersection of intelligent systems and everyday utility.</p></div>
         <div className="project-list">{projects.map(project => <article className={`project ${project.accent}`} key={project.title}><div className="project-visual"><span className="project-number">{project.number}</span><span className="project-icon">{project.icon}</span><span className="project-type">{project.type}</span></div><div className="project-content"><h3>{project.title}</h3><p className="project-lede">{project.description}</p><p className="project-detail">{project.details}</p><div className="project-footer"><div>{project.tags.map(tag => <span className="tag" key={tag}>{tag}</span>)}</div><span className="round-arrow"><Arrow /></span></div></div></article>)}</div>
       </section>
 
-      <section className="section-shell credentials">
+      <section className="section-shell credentials motion-section">
         <p className="section-kicker">05 / CREDENTIALS</p><div className="credential-grid"><div><h2>Always<br/><em>learning.</em></h2><p>Beyond the classroom, I stay engaged with the ideas and tools shaping data and AI.</p></div><div className="cert-list"><div><span>01</span><p>Time Series Analysis</p><b>IIT Guwahati</b></div><div><span>02</span><p>Deloitte Data Analytics Job Simulation</p><b>Forage</b></div></div></div>
         <div className="extra"><div><span>LANGUAGES</span><p>English · Hindi · Gujarati</p></div><div><span>INTERESTS</span><p>Reading · Research Papers · Photography & Videography</p></div></div>
       </section>
 
-      <section id="contact" className="contact section-shell"><div className="contact-glow" /><p className="section-kicker">06 / CONTACT</p><h2>Let’s make<br/>something <em>meaningful.</em></h2><p className="contact-copy">Have an interesting problem, role, or idea? I’d love to hear about it.</p><a className="email-link" href="mailto:jaydarji256@gmail.com">jaydarji256@gmail.com <Arrow /></a><div className="contact-bottom"><span>© {new Date().getFullYear()} JAY DARJI</span><a href="#home">BACK TO TOP ↑</a></div></section>
+      <section id="contact" className="contact section-shell motion-section"><div className="contact-glow" /><p className="section-kicker">06 / CONTACT</p><h2>Let’s make<br/>something <em>meaningful.</em></h2><p className="contact-copy">Have an interesting problem, role, or idea? I’d love to hear about it.</p><a className="email-link" href="mailto:jaydarji256@gmail.com">jaydarji256@gmail.com <Arrow /></a><div className="contact-bottom"><span>© {new Date().getFullYear()} JAY DARJI</span><a href="#home">BACK TO TOP ↑</a></div></section>
     </main>
   </>;
 }
