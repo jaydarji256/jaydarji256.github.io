@@ -43,6 +43,7 @@ function App() {
     <main>
       <section id="home" className="hero">
         <div className="hero-aurora" />
+        <div className="hero-ribbons" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow"><i /> JAY DARJI — AI ENTHUSIAST</p>
           <h1>Data work that<br/><em>feels human.</em></h1>
